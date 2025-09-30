@@ -55,8 +55,11 @@ class Ball:
         image = [load_image('ball21x21.png'), load_image('ball41x41.png')]
         self.num = random.randint(0,1)
         self.image = image[self.num]
-        self.speed = random.randint(1, 10)
+        self.speed = random.randint(5, 15)
     def update(self):
+        if (self.num == 0 and self.y > 60) or (self.num == 1 and self.y > 70):
+            self.y -= self.speed
+        else: self.y=60 if self.num == 0 else 70
         pass
 
     def draw(self):
@@ -92,6 +95,7 @@ def reset_world():
     world.append(zombie)
 
     ball = [Ball() for i in range(20)]
+    world += ball
 
 
 
