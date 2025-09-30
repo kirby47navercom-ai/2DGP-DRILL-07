@@ -1,6 +1,8 @@
 from pico2d import *
 import random
 
+from sdl2.examples.pong import Ball
+
 
 # Game object class here
 class Zombie:
@@ -46,6 +48,8 @@ class Boy:
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
 
+class Ball:
+    pass
 
 def handle_events():
     global running
@@ -74,6 +78,9 @@ def reset_world():
 
     zombie = Zombie()
     world.append(zombie)
+
+    ball = [Ball() for i in range(20)]
+
 
 
 def update_world():
