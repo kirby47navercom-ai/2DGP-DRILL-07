@@ -56,6 +56,9 @@ class Ball:
         self.num = random.randint(0,1)
         self.image = image[self.num]
         self.speed = random.randint(1, 10)
+    def update(self):
+        pass
+
     def draw(self):
         self.image.draw(self.x, self.y)
         pass
