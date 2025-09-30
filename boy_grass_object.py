@@ -1,5 +1,6 @@
 from pico2d import *
 import random
+#완성
 
 from sdl2.examples.pong import Ball
 
